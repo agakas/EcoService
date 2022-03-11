@@ -3,26 +3,44 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0C87418327DB721600E49817 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87418227DB721600E49817 /* AppDelegate.swift */; };
-		0C87418727DB721600E49817 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87418627DB721600E49817 /* ViewController.swift */; };
 		0C87418D27DB721600E49817 /* Recycle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C87418B27DB721600E49817 /* Recycle.xcdatamodeld */; };
 		0C87418F27DB721600E49817 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C87418E27DB721600E49817 /* Assets.xcassets */; };
 		0C87419227DB721600E49817 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C87419027DB721600E49817 /* LaunchScreen.storyboard */; };
+		0C8741A227DB875D00E49817 /* BubbleTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87419F27DB875D00E49817 /* BubbleTabBar.swift */; };
+		0C8741A327DB875D00E49817 /* BubbleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741A027DB875D00E49817 /* BubbleTabBarController.swift */; };
+		0C8741A427DB875D00E49817 /* CBTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741A127DB875D00E49817 /* CBTabBarButton.swift */; };
+		0C8741A827DB88FC00E49817 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741A727DB88FC00E49817 /* MapViewController.swift */; };
+		0C8741AA27DB891300E49817 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741A927DB891300E49817 /* CatalogViewController.swift */; };
+		0C8741AE27DB8A3C00E49817 /* Kepler-296.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C8741AB27DB8A3C00E49817 /* Kepler-296.otf */; };
+		0C8741AF27DB8A3C00E49817 /* MusticaproSemibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C8741AC27DB8A3C00E49817 /* MusticaproSemibold.otf */; };
+		0C8741B027DB8A3C00E49817 /* StretchPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C8741AD27DB8A3C00E49817 /* StretchPro.otf */; };
+		0C8741B327DB8A6000E49817 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741B227DB8A6000E49817 /* Extensions.swift */; };
+		0C8741B627DB8A9800E49817 /* TapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741B527DB8A9700E49817 /* TapticManager.swift */; };
 		613FAC93EAE369989F1F71C8 /* Pods_Recycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21824634AEBDA8F7FD430E5C /* Pods_Recycle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C87417F27DB721600E49817 /* Recycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C87418227DB721600E49817 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0C87418627DB721600E49817 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0C87418C27DB721600E49817 /* Recycle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Recycle.xcdatamodel; sourceTree = "<group>"; };
 		0C87418E27DB721600E49817 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C87419127DB721600E49817 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C87419327DB721600E49817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C87419F27DB875D00E49817 /* BubbleTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleTabBar.swift; sourceTree = "<group>"; };
+		0C8741A027DB875D00E49817 /* BubbleTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleTabBarController.swift; sourceTree = "<group>"; };
+		0C8741A127DB875D00E49817 /* CBTabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBTabBarButton.swift; sourceTree = "<group>"; };
+		0C8741A727DB88FC00E49817 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		0C8741A927DB891300E49817 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		0C8741AB27DB8A3C00E49817 /* Kepler-296.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kepler-296.otf"; sourceTree = "<group>"; };
+		0C8741AC27DB8A3C00E49817 /* MusticaproSemibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MusticaproSemibold.otf; sourceTree = "<group>"; };
+		0C8741AD27DB8A3C00E49817 /* StretchPro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = StretchPro.otf; sourceTree = "<group>"; };
+		0C8741B227DB8A6000E49817 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0C8741B527DB8A9700E49817 /* TapticManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapticManager.swift; sourceTree = "<group>"; };
 		21824634AEBDA8F7FD430E5C /* Pods_Recycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A11114EBC27D3626DC61800 /* Pods-Recycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recycle.debug.xcconfig"; path = "Target Support Files/Pods-Recycle/Pods-Recycle.debug.xcconfig"; sourceTree = "<group>"; };
 		A7CF6AA4893481AD0010911C /* Pods-Recycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recycle.release.xcconfig"; path = "Target Support Files/Pods-Recycle/Pods-Recycle.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +99,7 @@
 		0C87419A27DB723F00E49817 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0C8741B227DB8A6000E49817 /* Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -88,7 +107,10 @@
 		0C87419B27DB724600E49817 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0C87418627DB721600E49817 /* ViewController.swift */,
+				0C8741A727DB88FC00E49817 /* MapViewController.swift */,
+				0C8741A927DB891300E49817 /* CatalogViewController.swift */,
+				0C87419E27DB875D00E49817 /* TabBar */,
+				0C8741B427DB8A9700E49817 /* TapticEngine */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,6 +119,9 @@
 			isa = PBXGroup;
 			children = (
 				0C87418B27DB721600E49817 /* Recycle.xcdatamodeld */,
+				0C8741AB27DB8A3C00E49817 /* Kepler-296.otf */,
+				0C8741AC27DB8A3C00E49817 /* MusticaproSemibold.otf */,
+				0C8741AD27DB8A3C00E49817 /* StretchPro.otf */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -109,6 +134,24 @@
 				0C87419327DB721600E49817 /* Info.plist */,
 			);
 			path = Info;
+			sourceTree = "<group>";
+		};
+		0C87419E27DB875D00E49817 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0C87419F27DB875D00E49817 /* BubbleTabBar.swift */,
+				0C8741A027DB875D00E49817 /* BubbleTabBarController.swift */,
+				0C8741A127DB875D00E49817 /* CBTabBarButton.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		0C8741B427DB8A9700E49817 /* TapticEngine */ = {
+			isa = PBXGroup;
+			children = (
+				0C8741B527DB8A9700E49817 /* TapticManager.swift */,
+			);
+			path = TapticEngine;
 			sourceTree = "<group>";
 		};
 		981E6CF34BB11F8BF0AE9DDB /* Frameworks */ = {
@@ -125,7 +168,6 @@
 				6A11114EBC27D3626DC61800 /* Pods-Recycle.debug.xcconfig */,
 				A7CF6AA4893481AD0010911C /* Pods-Recycle.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -188,8 +230,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C8741B027DB8A3C00E49817 /* StretchPro.otf in Resources */,
 				0C87419227DB721600E49817 /* LaunchScreen.storyboard in Resources */,
+				0C8741AE27DB8A3C00E49817 /* Kepler-296.otf in Resources */,
 				0C87418F27DB721600E49817 /* Assets.xcassets in Resources */,
+				0C8741AF27DB8A3C00E49817 /* MusticaproSemibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,9 +287,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C87418727DB721600E49817 /* ViewController.swift in Sources */,
+				0C8741A227DB875D00E49817 /* BubbleTabBar.swift in Sources */,
+				0C8741A427DB875D00E49817 /* CBTabBarButton.swift in Sources */,
+				0C8741A327DB875D00E49817 /* BubbleTabBarController.swift in Sources */,
+				0C8741B627DB8A9800E49817 /* TapticManager.swift in Sources */,
+				0C8741B327DB8A6000E49817 /* Extensions.swift in Sources */,
 				0C87418327DB721600E49817 /* AppDelegate.swift in Sources */,
+				0C8741AA27DB891300E49817 /* CatalogViewController.swift in Sources */,
 				0C87418D27DB721600E49817 /* Recycle.xcdatamodeld in Sources */,
+				0C8741A827DB88FC00E49817 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
