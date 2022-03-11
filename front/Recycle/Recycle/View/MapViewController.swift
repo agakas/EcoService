@@ -9,17 +9,53 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIScrollViewDelegate {
     
-    let map = MKMapView()
-    var manager = CLLocationManager()
-    var localButton: UIButton!
+    private let map = MKMapView()
+    private var manager = CLLocationManager()
+    private var localButton: UIButton!
+    private var annotationView: MKAnnotationView!
+    private var scrollView: UIScrollView!
+    private var filtersView: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.addSubview(map)
         map.largeContentImageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         map.frame = view.bounds
+        
+        self.scrollView = {
+            let v = UIScrollView()
+            v.delegate = self
+            v.sizeToFit()
+            v.backgroundColor = .cyan
+            v.showsHorizontalScrollIndicator = false
+            v.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+            self.map.addSubview(v)
+            v.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.bottom.equalTo(self.view.snp.bottom).offset(-20)
+                make.width.equalToSuperview()
+                make.height.equalToSuperview().dividedBy(10)
+            }
+            return v
+        }()
+        
+        self.filtersView = {
+            let v = UIStackView()
+            v.sizeToFit()
+            v.alignment = .center
+            v.spacing = 10
+            v.axis = .horizontal
+            v.distribution = .fill
+            self.scrollView.addSubview(v)
+            v.snp.makeConstraints { make in
+                make.edges.equalTo(self.scrollView)
+                make.height.equalToSuperview()
+            }
+            return v
+        }()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,6 +78,27 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         
+        map.delegate = self
+        
+        // MARK: Add database
+        addCustomPin(coordinate: coordinate)
+        
         map.setRegion(region, animated: true)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !(annotation is MKUserLocation) else {
+            return nil
+        }
+        annotationView?.annotation = annotation
+        return annotationView
+    }
+    
+    private func addCustomPin(coordinate: CLLocationCoordinate2D){
+        let pin = MKPointAnnotation()
+        pin.coordinate = coordinate
+        pin.title = "Jopa"
+        pin.subtitle = "Che to"
+        map.addAnnotation(pin)
     }
 }

@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         catalogMap.tabBarItem = UITabBarItem(title: "Каталог", image: UIImage(systemName: "cart"), tag: 1)
         catalogMap.tabBarItem.selectedImage = UIImage(systemName: "cart.fill")
         let tabBarController = BubbleTabBarController()
-        tabBarController.viewControllers = [mapVC, catalogMap]
+        tabBarController.viewControllers = [catalogMap, mapVC]
         window = UIWindow()
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
