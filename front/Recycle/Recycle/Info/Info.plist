@@ -32,6 +32,14 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>StretchPro.otf</string>
+		<string>MusticaproSemibold.otf</string>
+		<string>Kepler-296.otf</string>
+	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Предоставьте доступ к данным Вашего местоположения</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
