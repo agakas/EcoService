@@ -21,6 +21,9 @@
 		0C8741B027DB8A3C00E49817 /* StretchPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C8741AD27DB8A3C00E49817 /* StretchPro.otf */; };
 		0C8741B327DB8A6000E49817 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741B227DB8A6000E49817 /* Extensions.swift */; };
 		0C8741B627DB8A9800E49817 /* TapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741B527DB8A9700E49817 /* TapticManager.swift */; };
+		0C8741B827DBADDB00E49817 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741B727DBADDB00E49817 /* Model.swift */; };
+		0C8741BB27DBBF9600E49817 /* MarkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741BA27DBBF9600E49817 /* MarkCollectionViewCell.swift */; };
+		0C8741BD27DBD5FA00E49817 /* DescripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741BC27DBD5FA00E49817 /* DescripViewController.swift */; };
 		613FAC93EAE369989F1F71C8 /* Pods_Recycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21824634AEBDA8F7FD430E5C /* Pods_Recycle.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,9 @@
 		0C8741AD27DB8A3C00E49817 /* StretchPro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = StretchPro.otf; sourceTree = "<group>"; };
 		0C8741B227DB8A6000E49817 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0C8741B527DB8A9700E49817 /* TapticManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapticManager.swift; sourceTree = "<group>"; };
+		0C8741B727DBADDB00E49817 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		0C8741BA27DBBF9600E49817 /* MarkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkCollectionViewCell.swift; sourceTree = "<group>"; };
+		0C8741BC27DBD5FA00E49817 /* DescripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescripViewController.swift; sourceTree = "<group>"; };
 		21824634AEBDA8F7FD430E5C /* Pods_Recycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A11114EBC27D3626DC61800 /* Pods-Recycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recycle.debug.xcconfig"; path = "Target Support Files/Pods-Recycle/Pods-Recycle.debug.xcconfig"; sourceTree = "<group>"; };
 		A7CF6AA4893481AD0010911C /* Pods-Recycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recycle.release.xcconfig"; path = "Target Support Files/Pods-Recycle/Pods-Recycle.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				0C8741B227DB8A6000E49817 /* Extensions.swift */,
+				0C8741B727DBADDB00E49817 /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,8 +114,10 @@
 		0C87419B27DB724600E49817 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0C8741B927DBBF4B00E49817 /* Subview */,
 				0C8741A727DB88FC00E49817 /* MapViewController.swift */,
 				0C8741A927DB891300E49817 /* CatalogViewController.swift */,
+				0C8741BC27DBD5FA00E49817 /* DescripViewController.swift */,
 				0C87419E27DB875D00E49817 /* TabBar */,
 				0C8741B427DB8A9700E49817 /* TapticEngine */,
 			);
@@ -152,6 +161,14 @@
 				0C8741B527DB8A9700E49817 /* TapticManager.swift */,
 			);
 			path = TapticEngine;
+			sourceTree = "<group>";
+		};
+		0C8741B927DBBF4B00E49817 /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				0C8741BA27DBBF9600E49817 /* MarkCollectionViewCell.swift */,
+			);
+			path = Subview;
 			sourceTree = "<group>";
 		};
 		981E6CF34BB11F8BF0AE9DDB /* Frameworks */ = {
@@ -293,9 +310,12 @@
 				0C8741B627DB8A9800E49817 /* TapticManager.swift in Sources */,
 				0C8741B327DB8A6000E49817 /* Extensions.swift in Sources */,
 				0C87418327DB721600E49817 /* AppDelegate.swift in Sources */,
+				0C8741B827DBADDB00E49817 /* Model.swift in Sources */,
+				0C8741BB27DBBF9600E49817 /* MarkCollectionViewCell.swift in Sources */,
 				0C8741AA27DB891300E49817 /* CatalogViewController.swift in Sources */,
 				0C87418D27DB721600E49817 /* Recycle.xcdatamodeld in Sources */,
 				0C8741A827DB88FC00E49817 /* MapViewController.swift in Sources */,
+				0C8741BD27DBD5FA00E49817 /* DescripViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
