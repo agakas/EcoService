@@ -34,3 +34,11 @@ class Company(models.Model):
 class Link(models.Model):
     id_company = models.ForeignKey(Company, on_delete=models.CASCADE)
     id_material = models.ForeignKey(Material, on_delete=models.CASCADE)
+
+class Ware(models.Model):
+    material = models.ForeignKey(Material, on_delete=models.CASCADE)
+    barcode = models.CharField(max_length=15)
+    name = models.CharField(max_length=100)
+    consist = models.CharField(max_length=500)
+    notify = models.CharField(max_length=100)
+    eco = eco =  models.BooleanField()
