@@ -2,7 +2,7 @@ import requests
 
 from rest_framework import serializers
 
-from .models import Material, Marks, Company, Link, Ware
+from .models import Material, Marks, Company, Link, WareType, Ware
 
 class MaterialSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -28,8 +28,15 @@ class LinkSerializer(serializers.HyperlinkedModelSerializer):
         model = Link
         fields = ('id_company','id_material')
 
+class WareTypeSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = WareType
+        fields = ('ware_type')
+
 class WareSerializer(serializers.HyperlinkedModelSerializer):
-    material = MaterialSerializer(many=True)
+    ware_type = WareTypeSerializer(many=False)
+    material = MaterialSerializer(many=False)
+    mark = MarksSerializer(many=False)
     class Meta:
         model = Ware
-        fields = ('material','barcode', 'name', 'consist', 'notify', 'eco')
+        fields = ('barcode', 'name_ware', 'ware_type', 'consist', 'eco', 'material', 'mark')

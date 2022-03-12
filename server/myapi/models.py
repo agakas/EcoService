@@ -17,6 +17,7 @@ class Marks(models.Model):
     def __str__(self):
         return self.mark_name
 
+
 class Company(models.Model):
     company_name =  models.CharField(max_length=30)
     phone =  models.CharField(max_length=30, default='8 800 555 35 35')
@@ -35,10 +36,14 @@ class Link(models.Model):
     id_company = models.ForeignKey(Company, on_delete=models.CASCADE)
     id_material = models.ForeignKey(Material, on_delete=models.CASCADE)
 
+class WareType(models.Model):
+    ware_type = models.CharField(max_length=50)
+
 class Ware(models.Model):
-    material = models.ForeignKey(Material, on_delete=models.CASCADE)
-    barcode = models.CharField(max_length=15)
-    name = models.CharField(max_length=100)
+    barcode = models.CharField(max_length=13)
+    name_ware = models.CharField(max_length=100)
+    ware_type = models.ForeignKey(WareType, on_delete=models.CASCADE)
     consist = models.CharField(max_length=500)
-    notify = models.CharField(max_length=100)
-    eco = eco =  models.BooleanField()
+    eco = models.BooleanField()
+    material = models.ForeignKey(Material, on_delete=models.CASCADE)
+    mark = models.ForeignKey(Marks, on_delete=models.CASCADE)
