@@ -15,13 +15,14 @@ class Marks(models.Model):
     text = models.CharField(max_length=500)
 
     def __str__(self):
-        return self.mark_name_name
+        return self.mark_name
 
 class Company(models.Model):
     company_name =  models.CharField(max_length=30)
     phone =  models.CharField(max_length=30, default='8 800 555 35 35')
     web_link = models.URLField(default='example.com')
     eco =  models.BooleanField()
+    materials = models.ManyToManyField(Material)
     adress = models.CharField(max_length=255)
     longitude = models.FloatField()
     latitude = models.FloatField()
