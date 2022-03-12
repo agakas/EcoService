@@ -24,6 +24,9 @@
 		0C8741B827DBADDB00E49817 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741B727DBADDB00E49817 /* Model.swift */; };
 		0C8741BB27DBBF9600E49817 /* MarkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741BA27DBBF9600E49817 /* MarkCollectionViewCell.swift */; };
 		0C8741BD27DBD5FA00E49817 /* DescripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741BC27DBD5FA00E49817 /* DescripViewController.swift */; };
+		0C8741BF27DC40D500E49817 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741BE27DC40D500E49817 /* CameraViewController.swift */; };
+		0C8741C327DC4B3200E49817 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741C227DC4B3200E49817 /* Resnet50.mlmodel */; };
+		0C8741C527DC5BD200E49817 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741C427DC5BD200E49817 /* ItemViewController.swift */; };
 		613FAC93EAE369989F1F71C8 /* Pods_Recycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21824634AEBDA8F7FD430E5C /* Pods_Recycle.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +50,9 @@
 		0C8741B727DBADDB00E49817 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		0C8741BA27DBBF9600E49817 /* MarkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkCollectionViewCell.swift; sourceTree = "<group>"; };
 		0C8741BC27DBD5FA00E49817 /* DescripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescripViewController.swift; sourceTree = "<group>"; };
+		0C8741BE27DC40D500E49817 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		0C8741C227DC4B3200E49817 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
+		0C8741C427DC5BD200E49817 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		21824634AEBDA8F7FD430E5C /* Pods_Recycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A11114EBC27D3626DC61800 /* Pods-Recycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recycle.debug.xcconfig"; path = "Target Support Files/Pods-Recycle/Pods-Recycle.debug.xcconfig"; sourceTree = "<group>"; };
 		A7CF6AA4893481AD0010911C /* Pods-Recycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recycle.release.xcconfig"; path = "Target Support Files/Pods-Recycle/Pods-Recycle.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +124,8 @@
 				0C8741A727DB88FC00E49817 /* MapViewController.swift */,
 				0C8741A927DB891300E49817 /* CatalogViewController.swift */,
 				0C8741BC27DBD5FA00E49817 /* DescripViewController.swift */,
+				0C8741BE27DC40D500E49817 /* CameraViewController.swift */,
+				0C8741C227DC4B3200E49817 /* Resnet50.mlmodel */,
 				0C87419E27DB875D00E49817 /* TabBar */,
 				0C8741B427DB8A9700E49817 /* TapticEngine */,
 			);
@@ -167,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				0C8741BA27DBBF9600E49817 /* MarkCollectionViewCell.swift */,
+				0C8741C427DC5BD200E49817 /* ItemViewController.swift */,
 			);
 			path = Subview;
 			sourceTree = "<group>";
@@ -304,10 +313,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C8741C327DC4B3200E49817 /* Resnet50.mlmodel in Sources */,
 				0C8741A227DB875D00E49817 /* BubbleTabBar.swift in Sources */,
+				0C8741C527DC5BD200E49817 /* ItemViewController.swift in Sources */,
 				0C8741A427DB875D00E49817 /* CBTabBarButton.swift in Sources */,
 				0C8741A327DB875D00E49817 /* BubbleTabBarController.swift in Sources */,
 				0C8741B627DB8A9800E49817 /* TapticManager.swift in Sources */,
+				0C8741BF27DC40D500E49817 /* CameraViewController.swift in Sources */,
 				0C8741B327DB8A6000E49817 /* Extensions.swift in Sources */,
 				0C87418327DB721600E49817 /* AppDelegate.swift in Sources */,
 				0C8741B827DBADDB00E49817 /* Model.swift in Sources */,
