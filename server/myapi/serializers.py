@@ -7,7 +7,7 @@ from .models import Material, Marks, Company, Link, WareType, Ware
 class MaterialSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Material
-        fields = ('material_name', 'image_url')
+        fields = ('material_name', 'image_url', 'warning')
 
 class MarksSerializer(serializers.HyperlinkedModelSerializer):
     material_id = MaterialSerializer(many=False)
@@ -22,8 +22,8 @@ class CompanySerializer(serializers.HyperlinkedModelSerializer):
         fields = ('company_name', 'phone', 'web_link', 'eco', 'materials', 'adress', 'longitude', 'latitude', 'hours')
 
 class LinkSerializer(serializers.HyperlinkedModelSerializer):
-    id_company = CompanySerializer(many=True)
-    id_material = MaterialSerializer(many=True)
+    id_company = CompanySerializer(many=False)
+    id_material = MaterialSerializer(many=False)
     class Meta:
         model = Link
         fields = ('id_company','id_material')
@@ -39,4 +39,4 @@ class WareSerializer(serializers.HyperlinkedModelSerializer):
     mark = MarksSerializer(many=False)
     class Meta:
         model = Ware
-        fields = ('barcode', 'name_ware', 'ware_type', 'consist', 'eco', 'material', 'mark')
+        fields = ('barcode', 'name_ware', 'ware_type', 'consist', 'eco', 'material','mark')
