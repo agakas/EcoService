@@ -10,18 +10,8 @@ import UIKit
 class MarkCollectionViewCell: UICollectionViewCell {
     static let cell = "cell"
     
-    private var img: UIImageView!
-    var imgGet: UIImageView {
-        get {
-            return img
-        }
-    }
-    private var title: UILabel!
-    var titleGet: UILabel {
-        get {
-            return title
-        }
-    }
+    var img: UIImageView!
+    var title: UILabel!
    
     override init(frame: CGRect) {
         super.init(frame: frame)
