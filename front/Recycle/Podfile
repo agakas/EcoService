@@ -9,5 +9,6 @@ target 'Recycle' do
 pod 'SnapKit'
 pod 'Alamofire'
 pod 'SwiftyJSON'
+pod 'Charts'
 
 end
