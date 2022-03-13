@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
+
 
 from .serializers import MaterialSerializer, MarksSerializer, CompanySerializer, LinkSerializer, WareTypeSerializer, WareSerializer
 from .models import Material, Marks, Company, Link, WareType, Ware
@@ -27,3 +28,14 @@ class WareTypeViewSet(viewsets.ModelViewSet):
 class WareViewSet(viewsets.ModelViewSet):
     queryset = Ware.objects.all().order_by('name_ware')
     serializer_class = WareSerializer
+
+class WareList(generics.ListAPIView):
+    serializer_class = WareSerializer
+
+    def get_queryset(self):
+        
+#        Это представление должно возвращать список всех покупок для
+#        пользователя, как определено по части имени пользователя в URL.
+
+        code = self.kwargs['code']
+        return Ware.objects.filter(barcode=code)

@@ -15,4 +15,5 @@ router.register(r'ware', views.WareViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    re_path(r'^barcode/(?P<code>.+)/$', views.WareList.as_view())
 ]
