@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Alamofire
 
 class CatalogViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     private var indecator: UIActivityIndicatorView!
     private var materialsGet = [Materials]()
     private var gallery: UICollectionView!
+    private var alert: UIAlertController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,11 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
         }()
         
         CompanyInfo.getMaterial { com, err in
+            
+            guard err == nil else {
+                self.alertAction(err!)
+                return
+            }
             
             guard let coms = com else {return}
             
@@ -78,5 +85,12 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
         vc.setUp(name: materialsGet[indexPath.row].name)
         let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true, completion: nil)
+    }
+    
+    func alertAction(_ er: AFError){
+        alert = UIAlertController(title: er.responseCode?.description, message: er.errorDescription!, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "cancel", style: .destructive, handler: nil))
+        indecator.stopAnimating()
+        present(self.alert, animated: true)
     }
 }

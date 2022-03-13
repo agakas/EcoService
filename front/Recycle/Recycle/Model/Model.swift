@@ -29,8 +29,8 @@ struct Category{
 }
 
 struct Mark{
-    var image: UIImage
-    var material: [Materials]
+    var image: UIImage?
+    var material: Materials
     var description: String
     var markName: String
 }
@@ -41,10 +41,20 @@ struct Materials{
     var warn: String?
 }
 
+struct Barcode{
+    var name: String
+    var material: Materials
+    var eco: Bool
+    var type: String
+    var consist: String
+    var text: String?
+    var imageMark: UIImage?
+}
+
 class CompanyInfo{
     static func getMaterial( _ completion: @escaping ([Materials]?, AFError?)->()){
         var materials = [Materials]()
-        let url = "http://10.2.0.30:8000/material"
+        let url = "http://10.2.0.30:8000/material/"
         AF.request(url, method: .get, parameters: nil).validate().responseData { response in
             if let error = response.error {
                 debugPrint(error)
@@ -56,15 +66,8 @@ class CompanyInfo{
                 i["material_name"].string != "null"
             }
             for com in filtComp{
-                let url1 = URL(string: com["image_url"].string!)
-                AF.request(url1!, method: .get, parameters: nil).validate().responseData { response1 in
-                    if let error1 = response.error {
-                        debugPrint(error1)
-                        completion(nil, error1)
-                    }
-                    guard let res1 = response1.value else {return}
-                    materials.append(Materials(name: com["material_name"].string!, img: UIImage(data: res1)!)
-                    )
+                getImg(url: com["image_url"].string!) { img, errrr in
+                    materials.append(Materials(name: com["material_name"].string!, img: img))
                     completion(materials, nil)
                 }
             }
@@ -74,7 +77,7 @@ class CompanyInfo{
     static func getInfo( _ completion: @escaping ([Company]?, AFError?)->()){
         var companies = [Company]()
         var materials = [Materials]()
-        let url = "http://10.2.0.30:8000/company"
+        let url = "http://10.2.0.30:8000/company/"
         AF.request(url, method: .get, parameters: nil).validate().responseData { response in
             if let error = response.error {
                 debugPrint(error)
@@ -96,7 +99,7 @@ class CompanyInfo{
     
     static func getMark( _ completion: @escaping ([Mark]?, AFError?)->()){
         var marks = [Mark]()
-        let url = "http://10.2.0.30:8000/marks"
+        let url = "http://10.2.0.30:8000/marks/"
         AF.request(url, method: .get, parameters: nil).validate().responseData { response in
             if let error = response.error {
                 debugPrint(error)
@@ -108,22 +111,57 @@ class CompanyInfo{
                 i["mark_name"].string != "null"
             }
             for com in filtComp{
-                let url1 = URL(string: com["image_url"].string!)
-                AF.request(url1!, method: .get, parameters: nil).validate().responseData { response1 in
-                    if let error1 = response.error {
-                        debugPrint(error1)
-                        completion(nil, error1)
+                getImg(url: com["image_url"].string!) { img, errrr in
+                    guard errrr == nil else {
+                        completion(nil, errrr)
+                        return
                     }
-                    guard let res1 = response1.value else {return}
-                    var materials = [Materials]()
-                    for j  in com["materials"].arrayValue{
-                        materials.append(Materials(name: j["material_name"].string!, img: nil,warn: j["warning"].string!))
-                    }
-                    marks.append(Mark(image: UIImage(data: res1)!, material: materials, description: com["text"].string!, markName: com["mark_name"].string!))
+                    marks.append(Mark(image: img, material: Materials(name: (com["material_id"].dictionaryValue["material_name"]?.string!)!, img: nil, warn: (com["material_id"].dictionaryValue["warning"]?.string!)!), description: com["text"].string!, markName: com["mark_name"].string!))
                     completion(marks, nil)
                 }
             }
         }
     }
+    
+    static func getImg(url: String, _ completion: @escaping (UIImage?, AFError?)->()){
+        AF.request(url, method: .get, parameters: nil).validate().responseData { response in
+            if let error = response.error {
+                debugPrint(error)
+                completion(nil, error)
+            }
+            guard let res = response.value else {return}
+            completion(UIImage(data: res)!,nil)
+        }
+    }
+    
+    static func getBarcode(code: String, _ completion: @escaping (Barcode?, AFError?)->()){
+        let url = "http://10.2.0.30:8000/barcode/\(code)"
+        AF.request(url, method: .get, parameters: nil).validate().responseData { response in
+            if let error = response.error {
+                debugPrint(error)
+                completion(nil, error)
+            }
+            guard let res = response.value else {return}
+            let company = JSON(res)
+            let filtComp = company.arrayValue.filter { i in
+                i["mark_name"].string != "null"
+            }
+            for com in filtComp{
+                if com["mark"].dictionaryValue["text"]?.stringValue != "null"{
+                    getImg(url: com["mark"].dictionaryValue["image_url"]!.stringValue) { img, errrr in
+                        guard errrr == nil else {
+                            completion(nil, errrr)
+                            return
+                        }
+                        completion(Barcode(name: com["name_ware"].stringValue, material: Materials(name: (com["material"].dictionaryValue["material_name"]?.string!)!, img: nil, warn: nil), eco: com["eco"].boolValue, type: (com["ware_type"].dictionaryValue["ware_type"]?.string!)!, consist: com["consist"].stringValue, text: (com["mark"].dictionaryValue["text"]?.string!)!, imageMark: img), nil)
+                    }
+                } else {
+                    completion(Barcode(name: com["name_ware"].stringValue, material: Materials(name: (com["material_id"].dictionaryValue["material_name"]?.string!)!, img: nil, warn: nil), eco: com["eco"].boolValue, type: (com["ware_type"].dictionaryValue["ware_type"]?.string!)!, consist: com["eco"].stringValue, text: (com["mark"].dictionaryValue["text"]?.string!)!, imageMark: nil), nil)
+                }
+            }
+        }
+    }
+    
+    
 }
 
