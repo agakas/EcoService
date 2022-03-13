@@ -39,4 +39,4 @@ class WareSerializer(serializers.HyperlinkedModelSerializer):
     mark = MarksSerializer(many=False)
     class Meta:
         model = Ware
-        fields = ('barcode', 'ware_type', 'ware_type', 'consist', 'eco', 'material','mark')
+        fields = ('barcode', 'name_ware','ware_type', 'ware_type', 'consist', 'eco', 'material','mark')
