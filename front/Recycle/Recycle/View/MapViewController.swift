@@ -9,6 +9,7 @@ import UIKit
 import MapKit
 import CoreLocation
 import Charts
+import Alamofire
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIScrollViewDelegate, ChartViewDelegate {
     
@@ -18,6 +19,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     private var annotationView: MKAnnotationView!
     private var scrollView: UIScrollView!
     private var filtersView: UIStackView!
+    private var alert: UIAlertController!
+    private var array: [Company]!
+    private var filtersArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,18 +31,43 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         map.frame = view.bounds
         
         CompanyInfo.getInfo { com, err in
+            guard err == nil else {
+                self.alertAction(err!)
+                return
+            }
+
+            guard let coms = com else {return}
+            
+            self.array = coms
+            
+            for i in coms{
+                    let coordinate = CLLocationCoordinate2D(latitude: i.long, longitude: i.lati)
+                    self.addCustomPin(coordinate: coordinate, name: i.name, address: i.address)
+//                    i.materials.count
+            }
+            
+            var set = Set<String>()
+            for i in coms{
+                for j in i.materials{
+                    set.update(with: j.name)
+                }
+            }
+            
+            
             self.scrollView = {
                 let v = UIScrollView()
                 v.delegate = self
                 v.sizeToFit()
-                v.backgroundColor = .cyan
+                v.layer.cornerRadius = 15
+                v.backgroundColor = .secondarySystemBackground
+                v.layer.masksToBounds = true
                 v.showsHorizontalScrollIndicator = false
                 v.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
                 self.map.addSubview(v)
                 v.snp.makeConstraints { make in
                     make.centerX.equalToSuperview()
                     make.bottom.equalTo(self.view.snp.bottom).offset(-20)
-                    make.width.equalToSuperview()
+                    make.width.equalToSuperview().dividedBy(1.02)
                     make.height.equalToSuperview().dividedBy(10)
                 }
                 return v
@@ -59,12 +88,40 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 return v
             }()
             
-            guard let coms = com else {return}
-            
-            for i in coms{
-                    let coordinate = CLLocationCoordinate2D(latitude: i.long, longitude: i.lati)
-                    self.addCustomPin(coordinate: coordinate, name: i.name, address: i.address)
-//                    i.materials.count
+            for button in set{
+                let _: UIButton = {
+                    let lab = UIButton()
+                    lab.setTitle(button, for: .normal)
+                    lab.addTarget(self, action: #selector(self.filter), for: .touchUpInside)
+                    lab.setTitleColor(.label, for: .normal)
+                    lab.titleLabel?.font = UIFont.font(15, UIFont.FontType.main)
+                    lab.layer.cornerRadius = 5
+                    lab.layer.masksToBounds = true
+                    lab.contentHorizontalAlignment = .center
+                    lab.contentVerticalAlignment = .center
+                    lab.sizeToFit()
+                    lab.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+                    if (button == "Пластик"){
+                        lab.backgroundColor = .systemYellow
+                    }
+                    if (button == "Тетра пак"){
+                        lab.backgroundColor = .gray
+                    }
+                    if (button == "Стекло"){
+                        lab.backgroundColor = .systemGreen
+                    }
+                    if (button == "Металл"){
+                        lab.backgroundColor = .systemRed
+                    }
+                    if (button == "Макулатура"){
+                        lab.backgroundColor = .systemBlue
+                    }
+                    self.filtersView.addArrangedSubview(lab)
+                    lab.snp.makeConstraints { snap in
+                        snap.height.equalToSuperview().dividedBy(2.7)
+                    }
+                    return lab
+                }()
             }
         }
     }
@@ -143,6 +200,63 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             return pie
         }()
         return pieChart
+    }
+    
+    func alertAction(_ er: AFError){
+        alert = UIAlertController(title: er.responseCode?.description, message: er.errorDescription!, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "cancel", style: .destructive, handler: nil))
+        present(self.alert, animated: true)
+    }
+    
+    @objc func filter(_ sender: UIButton){
+        map.removeAnnotations(map.annotations)
+        
+        var filtAr = [Company]()
+        for i in array{
+            for j in i.materials{
+                if sender.titleLabel?.text == j.name{
+                    filtAr.append(i)
+                }
+            }
+        }
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected{
+            filtersArray.append(sender.titleLabel!.text!)
+        } else {
+            filtersArray = filtersArray.filter({ i in
+                i != sender.titleLabel!.text!
+            })
+        }
+        if sender.isSelected{
+            sender.backgroundColor = .quaternaryLabel
+        } else {
+            if (sender.titleLabel!.text! == "Пластик"){
+                sender.backgroundColor = .systemYellow
+            }
+            if (sender.titleLabel!.text! == "Тетра пак"){
+                sender.backgroundColor = .gray
+            }
+            if (sender.titleLabel!.text! == "Стекло"){
+                sender.backgroundColor = .systemGreen
+            }
+            if (sender.titleLabel!.text! == "Металл"){
+                sender.backgroundColor = .systemRed
+            }
+            if (sender.titleLabel!.text! == "Макулатура"){
+                sender.backgroundColor = .systemBlue
+            }
+        }
+        if filtersArray == []{
+            for i in array{
+                    let coordinate = CLLocationCoordinate2D(latitude: i.long, longitude: i.lati)
+                    self.addCustomPin(coordinate: coordinate, name: i.name, address: i.address)
+            }
+        } else {
+            for i in filtAr{
+                    let coordinate = CLLocationCoordinate2D(latitude: i.long, longitude: i.lati)
+                    self.addCustomPin(coordinate: coordinate, name: i.name, address: i.address)
+            }
+        }
     }
     
 }
