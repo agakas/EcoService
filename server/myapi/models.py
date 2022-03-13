@@ -3,6 +3,7 @@ from django.db import models
 class Material(models.Model):
     material_name = models.CharField(max_length=30)
     image_url = models.CharField(max_length=250)
+    warning = models.CharField(max_length=500, default='hello')
 
     def __str__(self):
         return self.material_name
