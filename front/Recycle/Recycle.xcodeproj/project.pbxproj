@@ -28,11 +28,13 @@
 		0C8741C327DC4B3200E49817 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741C227DC4B3200E49817 /* Resnet50.mlmodel */; };
 		0C8741C527DC5BD200E49817 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741C427DC5BD200E49817 /* ItemViewController.swift */; };
 		0C8741C727DC7B7700E49817 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C8741C627DC7B7700E49817 /* icon.png */; };
+		0C8741DA27DDACBC00E49817 /* CatalogItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741D927DDACBC00E49817 /* CatalogItemView.swift */; };
+		0C8741DC27DDDB7F00E49817 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741DB27DDDB7F00E49817 /* Padding.swift */; };
 		613FAC93EAE369989F1F71C8 /* Pods_Recycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21824634AEBDA8F7FD430E5C /* Pods_Recycle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C87417F27DB721600E49817 /* Recycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C87417F27DB721600E49817 /* Эко сервис.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Эко сервис.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C87418227DB721600E49817 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C87418C27DB721600E49817 /* Recycle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Recycle.xcdatamodel; sourceTree = "<group>"; };
 		0C87418E27DB721600E49817 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +57,8 @@
 		0C8741C227DC4B3200E49817 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		0C8741C427DC5BD200E49817 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		0C8741C627DC7B7700E49817 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		0C8741D927DDACBC00E49817 /* CatalogItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogItemView.swift; sourceTree = "<group>"; };
+		0C8741DB27DDDB7F00E49817 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 		21824634AEBDA8F7FD430E5C /* Pods_Recycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A11114EBC27D3626DC61800 /* Pods-Recycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recycle.debug.xcconfig"; path = "Target Support Files/Pods-Recycle/Pods-Recycle.debug.xcconfig"; sourceTree = "<group>"; };
 		A7CF6AA4893481AD0010911C /* Pods-Recycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recycle.release.xcconfig"; path = "Target Support Files/Pods-Recycle/Pods-Recycle.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,7 +89,7 @@
 		0C87418027DB721600E49817 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0C87417F27DB721600E49817 /* Recycle.app */,
+				0C87417F27DB721600E49817 /* Эко сервис.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +183,8 @@
 			children = (
 				0C8741BA27DBBF9600E49817 /* MarkCollectionViewCell.swift */,
 				0C8741C427DC5BD200E49817 /* ItemViewController.swift */,
+				0C8741D927DDACBC00E49817 /* CatalogItemView.swift */,
+				0C8741DB27DDDB7F00E49817 /* Padding.swift */,
 			);
 			path = Subview;
 			sourceTree = "<group>";
@@ -219,7 +225,7 @@
 			);
 			name = Recycle;
 			productName = Recycle;
-			productReference = 0C87417F27DB721600E49817 /* Recycle.app */;
+			productReference = 0C87417F27DB721600E49817 /* Эко сервис.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -322,6 +328,7 @@
 				0C8741C527DC5BD200E49817 /* ItemViewController.swift in Sources */,
 				0C8741A427DB875D00E49817 /* CBTabBarButton.swift in Sources */,
 				0C8741A327DB875D00E49817 /* BubbleTabBarController.swift in Sources */,
+				0C8741DA27DDACBC00E49817 /* CatalogItemView.swift in Sources */,
 				0C8741B627DB8A9800E49817 /* TapticManager.swift in Sources */,
 				0C8741BF27DC40D500E49817 /* CameraViewController.swift in Sources */,
 				0C8741B327DB8A6000E49817 /* Extensions.swift in Sources */,
@@ -332,6 +339,7 @@
 				0C87418D27DB721600E49817 /* Recycle.xcdatamodeld in Sources */,
 				0C8741A827DB88FC00E49817 /* MapViewController.swift in Sources */,
 				0C8741BD27DBD5FA00E49817 /* DescripViewController.swift in Sources */,
+				0C8741DC27DDDB7F00E49817 /* Padding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +488,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = disavle.Recycle;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Эко сервис";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -501,7 +509,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = disavle.Recycle;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Эко сервис";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
