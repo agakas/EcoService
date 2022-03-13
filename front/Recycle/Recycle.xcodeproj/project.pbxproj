@@ -27,6 +27,7 @@
 		0C8741BF27DC40D500E49817 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741BE27DC40D500E49817 /* CameraViewController.swift */; };
 		0C8741C327DC4B3200E49817 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741C227DC4B3200E49817 /* Resnet50.mlmodel */; };
 		0C8741C527DC5BD200E49817 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8741C427DC5BD200E49817 /* ItemViewController.swift */; };
+		0C8741C727DC7B7700E49817 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C8741C627DC7B7700E49817 /* icon.png */; };
 		613FAC93EAE369989F1F71C8 /* Pods_Recycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21824634AEBDA8F7FD430E5C /* Pods_Recycle.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		0C8741BE27DC40D500E49817 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		0C8741C227DC4B3200E49817 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		0C8741C427DC5BD200E49817 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		0C8741C627DC7B7700E49817 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		21824634AEBDA8F7FD430E5C /* Pods_Recycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A11114EBC27D3626DC61800 /* Pods-Recycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recycle.debug.xcconfig"; path = "Target Support Files/Pods-Recycle/Pods-Recycle.debug.xcconfig"; sourceTree = "<group>"; };
 		A7CF6AA4893481AD0010911C /* Pods-Recycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recycle.release.xcconfig"; path = "Target Support Files/Pods-Recycle/Pods-Recycle.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,7 +127,6 @@
 				0C8741A927DB891300E49817 /* CatalogViewController.swift */,
 				0C8741BC27DBD5FA00E49817 /* DescripViewController.swift */,
 				0C8741BE27DC40D500E49817 /* CameraViewController.swift */,
-				0C8741C227DC4B3200E49817 /* Resnet50.mlmodel */,
 				0C87419E27DB875D00E49817 /* TabBar */,
 				0C8741B427DB8A9700E49817 /* TapticEngine */,
 			);
@@ -135,6 +136,8 @@
 		0C87419C27DB72F500E49817 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0C8741C227DC4B3200E49817 /* Resnet50.mlmodel */,
+				0C8741C627DC7B7700E49817 /* icon.png */,
 				0C87418B27DB721600E49817 /* Recycle.xcdatamodeld */,
 				0C8741AB27DB8A3C00E49817 /* Kepler-296.otf */,
 				0C8741AC27DB8A3C00E49817 /* MusticaproSemibold.otf */,
@@ -259,6 +262,7 @@
 				0C8741B027DB8A3C00E49817 /* StretchPro.otf in Resources */,
 				0C87419227DB721600E49817 /* LaunchScreen.storyboard in Resources */,
 				0C8741AE27DB8A3C00E49817 /* Kepler-296.otf in Resources */,
+				0C8741C727DC7B7700E49817 /* icon.png in Resources */,
 				0C87418F27DB721600E49817 /* Assets.xcassets in Resources */,
 				0C8741AF27DB8A3C00E49817 /* MusticaproSemibold.otf in Resources */,
 			);
