@@ -85,18 +85,19 @@ class CatalogItemView: UIView {
         }()
         
         self.image = {
-            let lab = UIImageView()
-            lab.backgroundColor = .white
-            lab.layer.cornerRadius = 15
-            lab.layer.masksToBounds = true
-            self.addSubview(lab)
-            lab.snp.makeConstraints { snap in
-                snap.centerX.equalToSuperview().offset(-20)
-                snap.centerY.equalToSuperview()
-                snap.width.equalToSuperview().dividedBy(2.5)
-                snap.height.equalTo(self.frame.width/2.5)
+            let img = UIImageView()
+            img.backgroundColor = .cyan
+            img.clipsToBounds = true
+            img.layer.cornerRadius = 15
+            img.contentMode = .scaleAspectFit
+            addSubview(img)
+            img.snp.makeConstraints { snap in
+                snap.centerX.equalToSuperview()
+                snap.top.equalTo(self.descrLabel.snp.bottom).offset(10)
+                snap.width.equalToSuperview().dividedBy(2.7)
+                snap.height.equalTo(frame.width/2.7)
             }
-            return lab
+            return img
         }()
     }
     
